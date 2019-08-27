@@ -1,3 +1,4 @@
+from time import time
 def l1(s):
     mm = cnt = 0;cur = ''
     for c in s:
@@ -15,6 +16,14 @@ def l2(s):
         max_cnt = cnt if max_cnt < cnt else max_cnt
     return max_cnt
 
-print(l1("aaaabbaabbbccbbde"))
-print(l2("aaaabbaabbbccbbde"))
-input()
+t = time()
+for n in range(100000):
+    _=l2("aaaabbaabbbccbbde")
+print(time()-t)
+
+t = time()
+for n in range(100000):
+    _=l1("aaaabbaabbbccbbde")
+print(time()-t)
+
+
